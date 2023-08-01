@@ -1,0 +1,144 @@
+
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    height: 64px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-picker {
+    margin-left: 25px;
+    background-color: #f2f4f6;
+    border-radius: 30px 30px;
+    height: 30px;
+    width: 200px;
+    border: #f2f4f6;
+
+}
+
+.button-avatar {
+    justify-content: center;
+    flex-grow: 2;
+    margin: 0px 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: #f2f4f6;
+    font-weight: bold;
+
+}
+
+
+.button-icon img {
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+.button-avatar:hover {
+    background-color: #f2f4f6
+}
+
+/* .button-icon:hover img {
+    filter: invert(50%)
+} */
+
+
+/*******/
+/* CSS for the menu and modal */
+.menu .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    /* Tạo overlay mờ và đặt z-index cao để nằm trên các phần tử khác */
+  }
+  
+  .menu .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    /* Căn giữa và thiết lập một số thuộc tính cho nội dung hộp thoại */
+  }
+  
+  .menu.show-modal .modal-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Hiển thị overlay khi có class show-modal */
+  }
+  
+/*CSS menu icon*/
+.menu-capsule {
+    position: absolute;
+    top: 50px;
+    left: 210px;
+    transform: translateX(-50%);
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 255px;
+    height: 230px;
+    border-radius: 10px;
+}
+
+
+.menu-capsule::before {
+    position: absolute;
+    top: 0px;
+    left: 50%; /* Điều chỉnh vị trí ngang của mũi tên */
+    border: 8px solid transparent;
+    border-bottom-color: #fff;
+    transform: translateX(-50%);
+}
+.menu__container{
+    display: flex;
+    flex-direction: column;
+}
+.menu-capsule button{
+    width: 255px;
+    height: 46px;
+}
+
+/*CSS menu Item*/
+.menu-capsule .menu-item{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    font-size: 14px;
+    color: #24272a;
+    padding: 14px 16px;
+}
+.menu__container :first-child{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.menu__container :last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.menu-item:hover{
+    background-color: #f2f4f6
+}
+.menu-item-link{
+    display: flex;
+    align-items: center;
+}
+
+

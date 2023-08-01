@@ -1,0 +1,62 @@
+.ntfs-tab__notice {
+    padding: 20px;
+}
+
+.ntfs-tab__notice__message {
+    padding: 20px;
+    display: flex;
+    border: solid 2px #0376c9;
+    border-radius: 15px;
+    background-color: #eaf6ff;
+}
+
+.message-info a {
+    color: #0376c9;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.message-info h5,
+h6 {
+    font-size: 14px;
+}
+
+.message-info h6 {
+    font-weight: 100;
+}
+
+.img-info {
+    margin-right: 10px;
+}
+
+.message-info h5 {
+    margin-bottom: 10px;
+    /* Giảm khoảng cách dưới mỗi h5 */
+}
+
+.message-info h5,
+.message-info h6{
+    margin-top: 0px;
+    /* Giảm khoảng cách giữa h5 và h6 */
+}
+
+/*ntfs-tab__img'*/
+.ntfs-tab__img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px;
+}
+.ntfs-tab__link h4{
+    color: #bbc0c5;
+}
+.ntfs-tab__link a{
+    color: #0376c9;
+}
+
+.ntfs-detection-notice__message__link:hover{
+    color: #085993;
+}
+.ntfs-tab__link:hover a{
+    color: #a7d9fe;
+}

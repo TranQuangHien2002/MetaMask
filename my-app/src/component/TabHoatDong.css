@@ -1,0 +1,30 @@
+.content-token{
+    height: 510px;
+}
+.transaction-list{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 24px 0px 0px 0px;
+}
+.transaction-list__empty-text{
+    font-size: 16px;
+    color: #bbc0c5;
+    font-family: "Euclid Circular B", Roboto, Helvetica, Arial, sans-serif;
+}
+.link-help-button {
+    height: 40px;
+}
+.link-help-button span {
+    color: #0376c9;
+    margin-left: 5px;
+    font-size: 16px;
+}
+.transaction-list__empty-link .link-help-button {
+    margin: 16px 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

@@ -1,0 +1,395 @@
+#app-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.app-header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.app-logo {
+    margin-right: 10px;
+}
+
+#app-content .app-header-logo h3 {
+    margin: 0;
+    letter-spacing: 2px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.multichain-app-header {
+    width: 1200px;
+    background-color: white;
+    margin-top: 30px;
+}
+
+.multichain-app-header__content {
+    margin-top: 5px;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+    /*tạo đường line*/
+}
+
+
+/*wallet-overview*/
+.wallet-overview {
+    display: flex;
+    flex-direction: column;
+    /* Xếp từ trên xuống dưới */
+    align-items: center;
+    /* Giữa theo chiều dọc (Y-axis) */
+    height: 100%;
+}
+
+.wallet-button {
+    padding-top: 20px;
+    display: inline-block;
+    margin-inline-start: 14px;
+}
+
+.button-overview {
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    width: 140px;
+    height: 32px;
+    background-color: #eaf6ff;
+    color: #0376c9;
+}
+
+.eth-overview__balance {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    position: relative;
+    align-items: center;
+    margin: 16px 0;
+    padding: 0 16px;
+    max-width: 326px;
+
+}
+
+.eth-overview__balance span {
+    font-size: 32px;
+}
+
+.currency-display-component__suffix {
+    padding-left: 4px;
+}
+
+.eth-overview__primary-container {
+    height: 45px;
+}
+
+.eth-overview__secondary-balance span {
+    font-size: 16px;
+    color: #535A61;
+}
+
+/*wallet-overview__buttons*/
+.wallet-overview__buttons {
+    display: flex;
+    flex-direction: row;
+    height: 68px;
+    margin-bottom: 24px;
+    gap: 25px;
+}
+
+.icon-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: unset;
+    text-align: center;
+    width: 60px;
+    font-family: "Euclid Circular B", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 140%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+
+}
+
+.eth-overview__button {
+    display: flex;
+    flex-direction: column;
+    /* Xếp từ trên xuống dưới */
+    align-items: center;
+    /* Giữa theo chiều dọc (Y-axis) */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #0376c9;
+
+}
+
+.icon-button__circle {
+    display: flex;
+    flex-direction: column;
+    /* Xếp từ trên xuống dưới */
+    align-items: center;
+    width: 40px;
+    height: 140px;
+
+
+}
+
+.icon-button__circle p {
+    width: 60px;
+}
+
+.icon-button__circle p {
+    white-space: nowrap;
+    /* Ngăn các từ trong đoạn văn bản xuống dòng */
+    text-overflow: ellipsis;
+    /* Thêm dấu chấm elipsis (...) khi nội dung bị cắt */
+    overflow: hidden;
+
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+    display: none;
+    top: 39%;
+    box-shadow: 0 0 2px 3px rgba(174, 166, 166, 0.1);
+    /*tạo đường line*/
+    color: #535A61;
+    font-size: 12px;
+}
+
+.icon-button__circle:hover .tooltip {
+    display: block;
+    /* Hiển thị tooltip khi di chuột vào container */
+}
+
+/* Tạo rectangular callout với dấu ngoặc nhọn */
+.tooltip::before,
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: #aaa;
+}
+
+.tooltip::before {
+  top: -20px;
+  border-bottom-color: #f9f9f9;
+}
+
+.tooltip::after {
+  top: -18px;
+  border-bottom-color: #fff;
+}
+
+/*mm-box*/
+
+ol,
+ul,
+a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+.box-tabs__list {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.home__tab {
+    flex-grow: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.home__tab button {
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 14px;
+
+}
+
+/* Thêm CSS mới cho hiệu ứng khi hover */
+.home__tab {
+    position: relative;
+    /* Để chứa phần màu xanh bên dưới */
+}
+
+.home__tab::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    /* Màu xanh cho hiệu ứng */
+    transform: scaleX(0);
+    /* Khởi tạo màu xanh ẩn đi */
+}
+
+.home__tab:hover::after {
+    transform: scaleX(1);
+    /* Hiển thị màu xanh bên dưới khi hover */
+}
+
+
+.home__tab.active::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #0376c9;
+    color: #0376c9;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+.home__tab.active button {
+    color: #0376c9;
+}
+
+/*box-tabs__content*/
+.multichain-token-list-item__container {
+    margin-top: 10px;
+    height: 50px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    /* Căn giữa theo chiều dọc (tùy chỉnh nếu cần thiết) */
+}
+
+.token-logo {
+    position: relative;
+    display: inline-block;
+    margin-top: -20px;
+    margin-right: 10px;
+}
+
+.token-logo__big {
+    border-radius: 50%;
+    padding: 5px;
+    /* Tùy chỉnh kích thước lớp màu tím xung quanh logo */
+    background-color: #1a45d163;
+}
+
+.token-logo__small {
+    position: absolute;
+    top: -5px;
+    right: -3px;
+}
+
+.token-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.token-content__text {
+    display: flex;
+    font-weight: 600;
+    justify-content: space-between;
+
+}
+
+.token-content__text-network p,
+.token-content__text-currency p {
+    color: #24272a;
+}
+
+.token-content__values {
+    color: #6f6d6d;
+}
+
+.token-content__text,
+.token-content__text-network p,
+.token-content__text-currency p,
+.token-content__values p {
+    margin: 0px;
+    height: 24px;
+}
+
+.multichain-token-list-item__container:hover {
+    background-color: #f2f4f6
+}
+
+/*multichain-token-link*/
+.multichain-token-link {
+    margin-top: 16px;
+    margin-left: 16px;
+}
+
+.multichain-token-link__button-refresh {
+    padding-top: 8px;
+}
+
+.import-token-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.refresh-list-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+
+}
+
+.link-help-button {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.multichain-token-link span {
+    color: #0376c9;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.link-help-button:hover span,
+.import-token-button:hover span,
+.refresh-list-button:hover span {
+    color: #a7d9fe;
+    /* Màu chữ mới khi hover (ở đây là màu xanh nước biển) */
+}
+
+.link-help-button:hover img,
+.import-token-button:hover img,
+.refresh-list-button:hover img {
+    filter: invert(50%)
+        /* Màu chữ mới khi hover (ở đây là màu xanh nước biển) */
+}

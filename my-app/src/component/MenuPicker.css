@@ -1,0 +1,178 @@
+.popover-wrap__picker {
+    display: flex;
+    flex-direction: column;
+    width: 328px;
+}
+
+.popover-header__picker {
+    display: flex;
+    padding: 16px;
+}
+
+.popover-header__picker button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0px;
+    justify-content: flex-end;
+    margin-left: 10px;
+}
+
+.popover-header__picker h2 {
+    margin: auto;
+    font-size: 18px;
+}
+
+/*popover-content__picker*/
+
+.picker-list-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    gap: 8px;
+}
+
+.picker-list-menu-item.selected::before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 60px;
+    background-color: #0376c9;
+    position: absolute;
+    left: 0;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+
+
+.picker-list-menu-item__network-avatar img {
+    border-radius: 50%;
+}
+
+.picker-list-menu-item__network-name button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0px;
+    font-size: 16px;
+}
+
+
+.picker-list-menu-item:hover {
+    background-color: #f2f4f6;
+}
+
+.picker-list-menu-item:hover button {
+    background-color: #f2f4f6;
+}
+
+.picker-list-menu-item.selected,
+.picker-list-menu-item.selected button {
+    background-color: #eaf6ff;
+}
+
+/*tạo scroll*/
+.picker-list-menu {
+    /* Đặt chiều cao tối đa để ban đầu chỉ hiển thị hai mạng */
+    max-height: 140px;
+    /* Kích hoạt tính năng cuộn dọc cho các network bổ xung*/
+    overflow-y: auto;
+}
+
+
+/**/
+.picker-toggle-witch {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px;
+    height: 24px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    border: #a5a3a3 solid 2px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 1px;
+    bottom: 0px;
+    background-color: rgb(106, 115, 125);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: white;
+    border: #2196F3 solid 2px;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(14px);
+    -ms-transform: translateX(14px);
+    transform: translateX(14px);
+    background-color: #2196F3;
+    /* Change button color to green when checked */
+
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/*picker-button-link*/
+.picker-button-link {
+    padding: 16px;
+}
+
+.picker-button-link button {
+    width: 296px;
+    height: 48px;
+    border-radius: 9999px;
+    font-size: 16px;
+    color: #0376c9;
+    border: solid 1px #0376c9;
+    background-color: white;
+}
+
+.picker-button-link:hover button {
+    background-color: #0260a4;
+    color: white;
+}
+
