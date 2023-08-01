@@ -76,7 +76,7 @@
 /*tạo scroll*/
 .picker-list-menu {
     /* Đặt chiều cao tối đa để ban đầu chỉ hiển thị hai mạng */
-    max-height: 140px;
+    max-height: 210px;
     /* Kích hoạt tính năng cuộn dọc cho các network bổ xung*/
     overflow-y: auto;
 }
