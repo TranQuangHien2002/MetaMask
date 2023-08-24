@@ -25,9 +25,12 @@
     /* Đẩy tiêu đề sang góc phải */
     font-size: 18px;
 }
-
+.popover-header:hover img {
+    filter: invert(50%)
+        /* Màu chữ mới khi hover (ở đây là màu xanh nước biển) */
+}
 /*popover-content*/
-.popover-list {
+.popover-list{
     display: grid;
     grid-template-columns: 1fr 10fr 1fr;
     background-color: #eaf6ff;

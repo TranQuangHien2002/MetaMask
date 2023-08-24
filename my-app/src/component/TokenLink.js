@@ -1,17 +1,16 @@
-import React from 'react'
-
+import React from 'react';
 
 function TokenLink(props) {
     return (
         <div className="multichain-token-link">
             <div className="multichain-token-link__button-import">
-                <button className="import-token-button">
+                <button className="import-token-button" onClick={props.onAddAccountClick}>
                     <img
                         src={props.img1}
                         alt=""
                         style={{
-                            width: "15px",
-                            height: "15px",
+                            width: "16px",
+                            height: "16px",
                         }}
                     ></img>
                     <span>{props.name1}</span>
@@ -23,8 +22,8 @@ function TokenLink(props) {
                         src={props.img2}
                         alt=""
                         style={{
-                            width: "15px",
-                            height: "15px",
+                            width: "16px",
+                            height: "16px",
                         }}
                     ></img>
                     <span>{props.name2}</span>
@@ -36,8 +35,8 @@ function TokenLink(props) {
                         src={props.img3}
                         alt=""
                         style={{
-                            width: "15px",
-                            height: "15px",
+                            width: "16px",
+                            height: "16px",
                         }}
                     ></img>
                     <a href={props.href} target="_blank" rel="noreferrer">
@@ -49,4 +48,4 @@ function TokenLink(props) {
     )
 }
 
-export default TokenLink
+export default TokenLink;

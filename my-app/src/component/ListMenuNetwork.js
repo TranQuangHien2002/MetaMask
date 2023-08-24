@@ -1,19 +1,20 @@
+// ListMenuNetwork.js
 import React from 'react';
 
-function ListMenuNetwork({ networkName, networkImg, activeNetwork, onClick }) {
+function ListMenuNetwork({ network, activeNetwork, onClick }) {
   const handleClick = () => {
-    onClick(networkName, networkImg);
+    onClick(network.networkName, network.networkImg);
   };
 
   return (
     <div
-      className={`picker-list-menu-item ${activeNetwork === networkName ? 'selected' : ''}`}
+      className={`picker-list-menu-item ${activeNetwork === network.networkName ? 'selected' : ''}`}
       onClick={handleClick}
     >
       <div className='picker-list-menu-item__network-avatar'>
         <img
-          src={networkImg}
-          alt={networkName}
+          src={network.networkImg}
+          alt={network.networkName}
           style={{
             width: "30px",
             height: "30px",
@@ -21,7 +22,7 @@ function ListMenuNetwork({ networkName, networkImg, activeNetwork, onClick }) {
         />
       </div>
       <div className='picker-list-menu-item__network-name'>
-        <button>{networkName}</button>
+        <button>{network.networkName}</button>
       </div>
     </div>
   );

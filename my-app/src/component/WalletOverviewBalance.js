@@ -6,7 +6,7 @@ function WalletOverviewBalance() {
     return (
         <div className="wallet-overview__balance">
             <div className="wallet-button">
-                <button className="button-overview">0xf52...a60B
+                <button className="button-overview"><span>0xf52777a60b</span>
                     <img
                         src={copy}
                         alt=""

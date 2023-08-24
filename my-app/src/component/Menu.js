@@ -1,71 +1,122 @@
 import React, { useState } from 'react';
-import './Menu.css'
+import './Menu.css';
 
 import logo2 from '../images/logo/eth_logo.png';
 import arow from '../images/icons/arrow-down.svg';
-import more from '../images/icons/more-vertical.svg'
+import more from '../images/icons/more-vertical.svg';
+import close from '../images/icons/close.svg';
+import arrowL from '..//images/icons/arrow-left.svg'
 
-
-import './MenuAvatar'
-import './MenuPicker'
 import MenuPicker from './MenuPicker';
-import MenuAvatar from './MenuAvatar';
-
-import './MenuItem'
+import MenuAvatar from './MenuAvatar1';
 import MenuItem from './MenuItem';
 
-function Menu() {
+import accountData, { generateRandomColor, generateRandomSVG } from './accountData';
+
+function Menu({ onSelectAccount }) {
     const [showModal1, setShowModal1] = useState(false);
     const [showModal2, setShowModal2] = useState(false);
     const [showModal3, setShowModal3] = useState(false);
+    const [showNewModal, setShowNewModal] = useState(false);
 
     const [selectedNetwork, setSelectedNetwork] = useState("Ethereum Mainnet");
-    const [selectedNetworkImg, setSelectedNetworkImg] = useState(logo2); // New state for the selected network image
+    const [selectedNetworkImg, setSelectedNetworkImg] = useState(logo2);
 
+    const [selectedAccount, setSelectedAccount] = useState("Account 1");
+    const [selectedAccountImg, setSelectedAccountImg] = useState(logo2);
+
+     // Step 1: Add a new state to track the input value
+    const [inputValue, setInputValue] = useState('');
+    
+    
     const handleSelectNetwork = (networkName, networkImg) => {
         setSelectedNetwork(networkName);
-        setSelectedNetworkImg(networkImg); // Update the selected network image
+        setSelectedNetworkImg(networkImg);
     };
+
+    const handleSelectAccount = (accountName, accountImg) => {
+        setSelectedAccount(accountName);
+        setSelectedAccountImg(accountImg);
+    };
+    
 
     const handleCloseModal = () => {
         setShowModal1(false);
         setShowModal2(false);
         setShowModal3(false);
+        setShowNewModal(false);
     };
+
     const handleBtn1Click = () => {
         setShowModal1(!showModal1);
         setShowModal2(false);
         setShowModal3(false);
+        setShowNewModal(false);
     };
 
     const handleBtn2Click = () => {
         setShowModal1(false);
         setShowModal2(!showModal2);
         setShowModal3(false);
+        setShowNewModal(false);
     };
 
     const handleBtn3Click = () => {
         setShowModal1(false);
         setShowModal2(false);
         setShowModal3(!showModal3);
+        setShowNewModal(false);
     };
 
-    // Thêm sự kiện onClick để ngăn sự kiện lan ra ngoài (e.stopPropagation())
     const handleModalClick = (e) => {
         e.stopPropagation();
     };
+
     const handleOutsideClick = () => {
         setShowModal1(false);
         setShowModal2(false);
         setShowModal3(false);
+        setShowNewModal(false);
     };
 
+    const handleAddAccountClick = () => {
+        setShowModal2(false);
+        setShowNewModal(true);
+    };
 
+    const handleNewModalClose = () => {
+        setShowNewModal(false);
+    };
+
+    // Step 2: Add a helper function to check if the input is empty
+    const isInputEmpty = () => {
+        return inputValue.trim() === '';
+    };
+
+    const handleAddAccount = () => {
+        if (!isInputEmpty()) {
+            const newAccount = {
+                id: accountData.length + 1,
+                name: inputValue,
+                img: generateRandomSVG(generateRandomColor(), generateRandomColor(), generateRandomColor()),
+                currency: 'USD',
+                address: '0x' + Math.random().toString(16).substr(2, 10), // Generate a random address
+                balance: '0 ETH',
+            };
+
+            // Update the state with the new account
+            accountData.push(newAccount);
+
+            // Close the modal and reset the input value
+            handleNewModalClose();
+            setInputValue('');
+        }
+    };
     return (
-        <div className={`menu ${showModal1 || showModal2 || showModal3 ? 'show-modal' : ''}`}>
+        <div className={`menu ${showModal1 || showModal2 || showModal3 || showNewModal ? 'show-modal' : ''}`}>
             <div className="button button-picker" onClick={handleBtn1Click}>
                 <img
-                    src={selectedNetworkImg} // Use the selected network image
+                    src={selectedNetworkImg}
                     alt=""
                     className="btn-header-logo"
                     style={{
@@ -88,12 +139,18 @@ function Menu() {
                 ></img>
             </div>
             <div className="button button-avatar" onClick={handleBtn2Click}>
-                <svg x="0" y="0" width="16" height="16" style={{ borderRadius: "50%", marginRight: "8px" }}>
-                    <rect x="0" y="0" width="16" height="16" transform="translate(-0.23089400121079215 4.012750031472015) rotate(165.4 8 8)" fill="#188CF2"></rect>
-                    <rect x="0" y="0" width="16" height="16" transform="translate(0.15026451180710063 -6.302670465269929) rotate(344.7 8 8)" fill="#FA8500"></rect>
-                    <rect x="0" y="0" width="16" height="16" transform="translate(7.064173132965704 10.241027787744542) rotate(213.3 8 8)" fill="#F5D400"></rect>
-                </svg>
-                <p>Account 1</p>
+            <img
+                    src={selectedAccountImg} 
+                    alt="img"
+                    className="btn-header-logo"
+                    style={{
+                        width: "15px",
+                        height: "15px",
+                        borderRadius: "50%",
+                        margin: "0px 10px"
+                    }}
+                ></img>
+                <p>{selectedAccount}</p>
                 <img
                     src={arow}
                     alt=""
@@ -120,12 +177,9 @@ function Menu() {
                 )}
             </div>
 
-
-
             {showModal1 && (
                 <div className="modal-overlay show-modal" onClick={handleOutsideClick}>
                     <div className="modal-content" onClick={handleModalClick}>
-                        {/* Pass the handleSelectNetwork callback to MenuPicker */}
                         <MenuPicker onClose={handleCloseModal} onSelectNetwork={handleSelectNetwork} />
                     </div>
                 </div>
@@ -134,13 +188,65 @@ function Menu() {
             {showModal2 && (
                 <div className="modal-overlay show-modal" onClick={handleOutsideClick}>
                     <div className="modal-content" onClick={handleModalClick}>
-                        <MenuAvatar onClose={handleCloseModal} /> {/* Pass the onClose prop */}
+                        <MenuAvatar onClose={handleCloseModal} onSelectAccount={handleSelectAccount} onAddAccountClick={handleAddAccountClick} />
                     </div>
                 </div>
             )}
 
+            {showNewModal && (
+                <div className="modal-overlay show-modal" onClick={handleOutsideClick}>
+                    <div className="modal-content" onClick={handleModalClick}>
+                        <div className='popoper-box'>
+                            <div className='popoper-header'>
+                                <div className='popoper-header__title'>
+                                    <button onClick={handleBtn2Click} className='rollback'>
+                                        <img
+                                            src={arrowL}
+                                            alt=""
+                                            style={{
+                                                width: "15px",
+                                                height: "15px",
+                                            }}
+                                        ></img>
+                                    </button>
+                                    <h2>Add account</h2>
+                                    <button onClick={handleNewModalClose} className='close'>
+                                        <img
+                                            src={close}
+                                            alt=""
+                                            style={{
+                                                width: "15px",
+                                                height: "15px",
+                                            }}
+                                        ></img>
+                                    </button>
+                                </div>
+                            </div>
+                            <div className='popoper-content'>
+                                <form>
+                                    <div className='popoper-content__add'>
+                                        <label>Tên tài khoản</label>
+                                        <input
+                                            placeholder="Tài khoản.."
+                                            type="text"
+                                            value={inputValue}
+                                            onChange={(e) => setInputValue(e.target.value)}
+                                        />
+                                        {/* Step 3: Show "Bắt buộc" if the input is empty */}
+                                        {isInputEmpty() && <p style={{ color: 'red', margin: '10px 0',fontSize:'12px'}}>Bắt buộc</p>}
+                                    </div>
+                                    <div className='popoper-content__btn'>
+                                        <button onClick={handleBtn2Click} className='cancel'>Hủy</button>
+                                        <button onClick={handleAddAccount} className='add'>Tạo</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
-    )
+    );
 }
 
-export default Menu
+export default Menu;

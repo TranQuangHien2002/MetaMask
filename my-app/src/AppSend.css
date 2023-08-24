@@ -1,0 +1,73 @@
+.main-container-wrapper-send{
+    background-color: #f2f4f6;
+    padding-top: 15px;
+}
+.page-container{
+    margin: 0 auto;
+    width: 408px;
+    height: 570px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+.send-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0 3px 0;
+}
+
+.send-header__title {
+    flex-grow: 1; /* Để .send-header__title chiếm phần trống còn lại và nằm giữa */
+    text-align: center; /* Căn giữa nội dung của .send-header__title */
+    font-size: 18px;
+}
+
+.send-header__close {
+    margin-left: auto;
+    padding: 12px 16px 12px 0px;
+    font-size: 12px;
+    color: #0376C9;
+    cursor: pointer;
+}
+.send-row{
+    padding: 8px;
+}
+.input__wrapper{
+    width: 374px;
+    height: 30px;
+    border: 2px solid #d6d9dc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 8px;
+}
+.input__wrapper__input{
+    border: none;
+    width: 343px;
+    height: 22px;
+}
+.input__wrapper__input:focus {
+    outline: none; /* Loại bỏ viền khi focus */
+    border: none;  /* Loại bỏ viền khung */
+  }
+  .input__wrapper__btn {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none; /* Xóa nền nút */
+    border: none;     /* Xóa viền nút */
+    cursor: pointer;
+}
+.send-selected{
+    padding: 0.5px;
+}
+.send-selected__title p{
+    font-size: 18px;
+    padding: 0 16px;
+}
+
+  
+  

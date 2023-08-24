@@ -1,5 +1,4 @@
-
-.menu{
+.menu {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     height: 64px;
@@ -65,9 +64,9 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9999;
     /* Tạo overlay mờ và đặt z-index cao để nằm trên các phần tử khác */
-  }
-  
-  .menu .modal-content {
+}
+
+.menu .modal-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -75,15 +74,15 @@
     background-color: white;
     border-radius: 10px;
     /* Căn giữa và thiết lập một số thuộc tính cho nội dung hộp thoại */
-  }
-  
-  .menu.show-modal .modal-overlay {
+}
+
+.menu.show-modal .modal-overlay {
     display: flex;
     justify-content: center;
     align-items: center;
     /* Hiển thị overlay khi có class show-modal */
-  }
-  
+}
+
 /*CSS menu icon*/
 .menu-capsule {
     position: absolute;
@@ -101,22 +100,25 @@
 .menu-capsule::before {
     position: absolute;
     top: 0px;
-    left: 50%; /* Điều chỉnh vị trí ngang của mũi tên */
+    left: 50%;
+    /* Điều chỉnh vị trí ngang của mũi tên */
     border: 8px solid transparent;
     border-bottom-color: #fff;
     transform: translateX(-50%);
 }
-.menu__container{
+
+.menu__container {
     display: flex;
     flex-direction: column;
 }
-.menu-capsule button{
+
+.menu-capsule button {
     width: 255px;
     height: 46px;
 }
 
 /*CSS menu Item*/
-.menu-capsule .menu-item{
+.menu-capsule .menu-item {
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -125,20 +127,97 @@
     color: #24272a;
     padding: 14px 16px;
 }
-.menu__container :first-child{
+
+.menu__container :first-child {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.menu__container :last-child{
+
+.menu__container :last-child {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-.menu-item:hover{
+
+.menu-item:hover {
     background-color: #f2f4f6
 }
-.menu-item-link{
+
+.menu-item-link {
     display: flex;
     align-items: center;
 }
 
+
+/*Menu add count*/
+.popoper-box {
+    display: flex;
+    flex-direction: column;
+    width: 328px;
+}
+
+.popoper-header__title {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.popoper-header__title button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0px;
+}
+
+.popoper-header__title h2 {
+    font-size: 18px;
+}
+
+.popoper-header__title>.rollback:hover img,
+.popoper-header__title>.close:hover img {
+    filter: invert(50%)
+        /* Màu chữ mới khi hover (ở đây là màu xanh nước biển) */
+}
+
+.popoper-content {
+    padding: 0px 16px 16px;
+}
+
+.popoper-content__add {
+    display: flex;
+    flex-direction: column;
+}
+
+.popoper-content__add label {
+    height: 24px;
+    font-size: 16px;
+    font-weight: 600
+}
+
+.popoper-content__add input {
+    padding: 1px 16px;
+    height: 40px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+.popoper-content__btn {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+.popoper-content__btn button{
+    width: 145px;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0px 16px;
+}
+.popoper-content__btn >.cancel{
+    background-color: #fff;
+    color: #0376c9;
+    border: #0376c9 1px solid;
+}
+.popoper-content__btn >.add{
+    color: #fff;
+    background-color: #0376c9;
+    border: none;
+}
 

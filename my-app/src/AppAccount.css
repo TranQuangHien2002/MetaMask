@@ -1,0 +1,305 @@
+.main-container-wrapper-send {
+    background-color: #f2f4f6;
+    padding-top: 15px;
+}
+
+.page-container {
+    margin: 0 auto;
+    width: 408px;
+    height: 570px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.send-account-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 0 3px 0;
+}
+
+.send-account-header__title {
+    position: absolute;
+    font-size: 18px;
+}
+
+.send-account-header__btn{
+    background: none;
+    /* Xóa nền nút */
+    border: none;
+    /* Xóa viền nút */
+    cursor: pointer;
+    color: #0376c9;
+    margin-left: 260px;
+}
+.send-account-row {
+    padding: 8px;
+    margin-top: 10px;
+}
+
+.send-account-row__input {
+    padding: 12px 8px;
+    border: solid 1px #0376c9;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.send-account-row__input-select {
+    width: 351px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.input-select__name {
+    margin: 0px;
+    font-size: 14px;
+    color: #0376c9;
+}
+
+.input-select__address {
+    margin: 4px 0px 0px;
+    font-size: 12px;
+}
+
+.send-account-row__input button {
+    width: 16px;
+    height: 16px;
+    background: none;
+    /* Xóa nền nút */
+    border: none;
+    /* Xóa viền nút */
+    cursor: pointer;
+}
+
+.send-v2__from {
+    height: 350px;
+}
+
+.send-v2__from-row {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 1rem 0;
+    align-items: center;
+
+}
+
+.send-v2__asset-dropdown-top {
+    width: 263px;
+    border: solid 1px #d6d9dc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+
+.send-v2__asset-dropdown-top__data {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+}
+
+.send-v2__asset-dropdown-top__symbol {
+    font-size: 16px;
+    margin: 0px 2px 0px 0px;
+}
+
+.send-v2__asset-dropdown-top__name {
+    display: flex;
+    font-size: 12px;
+
+}
+
+.send-v2__asset-dropdown-top__name__label {
+    margin: 0px 4px 0px 0px;
+    margin-right: 0.25rem;
+    min-width: 52px;
+}
+
+.send-v2__asset-dropdown-bottom {
+    width: 277px;
+    height: 54px;
+    border: solid 1px #d6d9dc;
+    border-radius: 5px;
+
+}
+
+.unit-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+}
+
+.unit-input__inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.unit-input__input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2px;
+}
+
+.unit-input__input {
+    padding: 1px 2px;
+    font-size: 16px;
+    border: none;
+    width: auto;
+    max-width: 100%;
+    margin-right: 0px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.unit-input__input:focus {
+    outline: none;
+    /* Loại bỏ viền khi focus */
+    border: none;
+    /* Loại bỏ viền khung */
+}
+
+.currency-input__swap-component {
+    width: 16px;
+    height: 16px;
+    background: none;
+    /* Xóa nền nút */
+    border: none;
+    /* Xóa viền nút */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.unit-input .currency-display-component {
+    font-size: 12px;
+}
+
+.transaction-detail-item {
+    border: solid 1px #d6d9dc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction-detail-item__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 28px;
+}
+
+.transaction-detail-item__detail-title h6 {
+    display: flex;
+    flex-direction: row;
+}
+
+.gas-details-item-title {
+    margin-right: 4px;
+    font-size: 14px;
+}
+
+.info-tooltip {
+    display: inline-block;
+    margin-inline-start: 4px;
+}
+
+.gas-details-item-title__estimate {
+    font-size: 12px;
+    color: #bbc0c5;
+    font-weight: 400;
+    font-style: italic;
+    line-height: inherit;
+}
+
+.transaction-detail-item__detail-values span {
+    font-size: 14px;
+}
+
+.transaction-detail-item__row h6 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.transaction-detail-item-ability-title {
+    color: #28a745;
+}
+
+.transaction-detail-item-fee-title {
+    color: #535A61;
+    text-align: end
+}
+
+.currency-display-component__transaction {
+    margin-left: 4px;
+    color: #535A61;
+    font-weight: 400;
+    line-height: inherit;
+}
+
+.send-account-footer {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    border-top: solid 1px #d6d9dc;
+}
+
+.send-account-footer button {
+    width: 180px;
+    font-size: 14px;
+    padding: 12px 16px;
+    border-radius: 25px;
+}
+
+.btn-footer-close {
+    margin-right: 16px;
+    color: #0376c9;
+    background-color: #ffffff;
+    border: 1px solid #0376c9;
+}
+
+.btn-footer-continue {
+    color: #ffffff;
+    background-color: #0376c9;
+    border: 1px solid #0376c9;
+}
+
+
+.checkbox-btn {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.checkbox-btn input[type="checkbox"] {
+    display: none;
+    /* Ẩn checkbox gốc */
+}
+
+.checkbox-btn-label {
+    width: 56px;
+    height: 20px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #0376c9;
+    border-radius: 10px;
+    color: #0376c9;
+    opacity: 0.5;
+    /*tạo 1 lớp phủ */
+}

@@ -1,4 +1,5 @@
 import './App.css';
+import React, { useState } from 'react';
 
 import Headerr from './component/Headerr';
 import Menu from './component/Menu';
@@ -8,7 +9,22 @@ import WalletOverviewButton from './component/WalletOverviewButton';
 
 import TabList from './component/TabList';
 
+import AppSend from './AppSend'; // Import trang AppSend
+
+
 function App() {
+  const [showAppSend, setShowAppSend] = useState(false);
+
+  const handleSendClick = () => {
+    setShowAppSend(true);
+  };
+  const handleCancelSend = () => {
+    setShowAppSend(false); // Quay lại trang App
+  };
+  if (showAppSend) {
+    return <AppSend onCancelSend={handleCancelSend}/>;
+  }
+  
   return (
     <div id="app-content">
       <Headerr></Headerr>
@@ -24,7 +40,7 @@ function App() {
             <div className="home__balance-wapper">
               <div className="wallet-overview">
                 <WalletOverviewBalance></WalletOverviewBalance>
-                <WalletOverviewButton></WalletOverviewButton>
+                <WalletOverviewButton  onSendClick={handleSendClick}/>
               </div>
             </div>
 
@@ -38,6 +54,7 @@ function App() {
         </div>
 
       </div>
+      
     </div>
   );
 }

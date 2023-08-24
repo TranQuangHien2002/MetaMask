@@ -6,10 +6,10 @@ import swap from '../images/icons/swap-horizontal.svg'
 import bridge from '../images/icons/bridge.svg'
 import diagram from '../images/icons/diagram.svg'
 
-function WalletOverviewButton() {
+function WalletOverviewButton({onSendClick}) {
     return (
         <div className="wallet-overview__buttons">
-            <button className="icon-button eth-overview__button">
+            <button className="icon-button eth-overview__button" >
                 <a className="icon-button__circle" href='https://portfolio.metamask.io/buy?metamaskEntry=ext_buy_button&metametricsId=0x90afb201e6e924672d41c88c0cf8a3d9aad2a9bef1ba48a39c1ae2760c980d50' target='_blank' rel="noreferrer">
                     <img
                         src={add}
@@ -24,7 +24,7 @@ function WalletOverviewButton() {
                     <p>Mua</p>
                 </a>
             </button>
-            <button className="icon-button eth-overview__button">
+            <button className="icon-button eth-overview__button"onClick={onSendClick}>
                 <div className="icon-button__circle">
                     <img
                         src={arrow2}
@@ -90,5 +90,4 @@ function WalletOverviewButton() {
         </div>
     )
 }
-
 export default WalletOverviewButton

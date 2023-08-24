@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import ListMenuNetwork from './ListMenuNetwork';
 import './MenuPicker.css';
+import NetworkData from './NetworkData'; 
 
 import close from '../images/icons/close.svg';
-import logoETH from '../images/logo/eth_logo.png';
-import logoLM from '../images/logo/linea-logo-mainnet.png';
-import logoG from '../images/logo/logoD.png'
-import logoS from '../images/logo/logoG.png'
-import logoLT from '../images/logo/linea-logo-testnet.png'
-
 
 function MenuPicker({ onClose, onSelectNetwork }) {
   const [activeNetwork, setActiveNetwork] = useState('Ethereum Mainnet');
@@ -23,6 +18,8 @@ function MenuPicker({ onClose, onSelectNetwork }) {
     setShowNewFrame(!showNewFrame);
   };
 
+  const visibleNetworks = NetworkData.slice(0, 3);
+
   return (
     <div className='popover-wrap__picker'>
       <div className='popover-header__picker'>
@@ -35,46 +32,31 @@ function MenuPicker({ onClose, onSelectNetwork }) {
               width: "15px",
               height: "15px",
             }}
-          ></img>
+          />
         </button>
       </div>
       <div className='popover-content__picker'>
         <div className='picker-list-menu'>
-          <ListMenuNetwork
-            networkName='Ethereum Mainnet'
-            networkImg={logoETH} 
-            activeNetwork={activeNetwork}
-            onClick={handleNetworkClick}
-          />
-          <ListMenuNetwork
-            networkName='Linea Mainnet'
-            networkImg={logoLM}
-            activeNetwork={activeNetwork}
-            onClick={handleNetworkClick}
-          />
-          {showNewFrame ? (
+          {visibleNetworks.map(network => (
+            <ListMenuNetwork
+              key={network.id}
+              network={network}
+              activeNetwork={activeNetwork}
+              onClick={handleNetworkClick}
+            />
+          ))}
+          {showNewFrame && (
             <div className="scrollable-networks">
-              <ListMenuNetwork
-                networkName='Goerli'
-                networkImg={logoG}
-                activeNetwork={activeNetwork}
-                onClick={handleNetworkClick}
-              />
-              <ListMenuNetwork
-                networkName='Sepolia'
-                networkImg={logoS}
-                activeNetwork={activeNetwork}
-                onClick={handleNetworkClick}
-              />
-              <ListMenuNetwork
-                networkName='Linea Goerli'
-                networkImg={logoLT}
-                activeNetwork={activeNetwork}
-                onClick={handleNetworkClick}
-              />
-              {/* Add more networks here */}
+              {NetworkData.slice(3).map(network => (
+                <ListMenuNetwork
+                  key={network.id}
+                  network={network}
+                  activeNetwork={activeNetwork}
+                  onClick={handleNetworkClick}
+                />
+              ))}
             </div>
-          ) : null}
+          )}
         </div>
         <div className='picker-toggle-witch'>
           <p>Hiển thị các mạng thử nghiệm</p>
@@ -92,4 +74,3 @@ function MenuPicker({ onClose, onSelectNetwork }) {
 }
 
 export default MenuPicker;
-

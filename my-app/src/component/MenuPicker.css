@@ -22,7 +22,9 @@
     margin: auto;
     font-size: 18px;
 }
-
+.popover-header__picker:hover img{
+    filter: invert(50%)
+}
 /*popover-content__picker*/
 
 .picker-list-menu-item {

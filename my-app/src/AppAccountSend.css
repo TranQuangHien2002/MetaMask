@@ -1,0 +1,119 @@
+.confirm-page-container-header__row {
+    display: flex;
+    padding: 4px 13px 4px 13px;
+    flex: 0 0 auto;
+    align-items: center;
+    border-bottom: 1px solid #d6d9dc;
+}
+
+.confirm-page-container-header__row button {
+    background: none;
+    /* Xóa nền nút */
+    border: none;
+    /* Xóa viền nút */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-page-container-header__row-title {
+    color: #0376C9;
+    font-size: 16px;
+    padding: 0px 0px 0px 5px;
+}
+
+.confirm-page-container-header__sender {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sender-to-recipient__party-sender {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px 0px 16px;
+    align-items: center;
+}
+
+.sender-to-recipient__party-receiver {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 16px 0px 30px;
+    align-items: center;
+
+}
+.sender-to-recipient__arrow-circle{
+    background:#ffffff;
+    padding: 5px;
+    border: 1px solid #d6d9dc;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sender-to-recipient__tooltip-wrapper p{
+    font-size: 12px;
+    padding-left: 14px;
+}
+.sender-to-recipient__arrow-circle{
+    margin: 5px 0px;
+}
+
+.confirm-page-container-content__summary{
+    -moz-border-top-colors: 1px solid #d6d9dc;
+    padding: 16px 24px;
+    background-color: #f2f4f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.confirm-page-container-content__summary__action{
+    padding: 0px 0px 8px;
+}
+.confirm-page-container-summary__action__name{
+    padding: 3px 8px;
+    border: 1px solid #d6d9dc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #535a61;
+}
+.confirm-page-container-content__summary__title .currency-display-component{
+    font-size: 24px;
+}
+
+.confirm-page-container-content__details{
+    padding: 0px 24px;
+}
+.transaction-alerts{
+    padding: 20px 0px 0px;
+}
+.edit-gas-fee-button{
+    font-size: 0.75rem;
+    color: #0376c9;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1px 0px 1px 6px;
+}
+.transaction-detail-item__detail-values{
+    display: flex;
+}
+.transaction-detail-item__detail-values h6:first-child{
+    font-weight: 100;
+}
+.confirm-page-container-content__details .transaction-detail-item{
+    border: none;
+    padding: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.transaction-detail-item__top{
+    padding: 0px 0px 20px;
+}
+.transaction-detail-item__bottom{
+    border-top: solid 1px black;
+    padding: 20px 0px 0px;
+    margin-bottom: 140px;
+}
